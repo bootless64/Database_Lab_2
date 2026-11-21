@@ -1,0 +1,14 @@
+مشتری هایی را نمایش دهید که حداقل یک سفارش ثبت کردند
+select first_name,o.order_status from customers c JOIN orders o on c.customer_id = o.customer_id 
+
+محصولاتی را نمایش دهید که تعداد آنها بیشتر از 100 باشد 
+select product_name from products WHERE stock_quantity >= 100
+
+محصولاتی را نمایش دهید که بیشترین امتیاز را از کاربر گرفته اند
+select p.product_name, r.rating from reviews r join products p on r.product_id = p.product_id WHERE rating >= 5
+
+نام فروشنده هایی را نمایش دهید که محصولات آنها در یک سفارش ثبت شده باشد
+select s.first_name from sellers s join products p on p.seller_id = s.seller_id 
+
+سفارشات کاربران را به صورتی نمایش دهید که نام محصولات سفارش داده شده قابل رویت باشد
+select p.product_name from products p JOIN order_items o on p.product_id = o.product_id 
